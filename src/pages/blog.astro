@@ -1,15 +1,15 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const allPosts = await Astro.glob("../pages/posts/*.md");
+const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout title="Jim.dev">
   <h1>Jim<span class="text-gradient">.dev</span> - Blog</h1>
-  {Astro.url.pathname}
   {
     allPosts.map((post) => (
       <li>
-        <a href={post.url}>{post.frontmatter.title}</a>
+        <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
       </li>
     ))
   }
