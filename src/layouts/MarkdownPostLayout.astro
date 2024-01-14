@@ -1,0 +1,24 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}>
+  <main>
+    <h1>{frontmatter.title}</h1>
+    <p>Written by {frontmatter.author}</p>
+    <slot />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>

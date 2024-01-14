@@ -3,9 +3,14 @@
 ---
 
 <div class="header" icon-container>
-  <a href="">Jim.dev</a>
+  <a href="/">Home</a>
   <div class="link-container">
-    <a href="">blog</a>
+    <a
+      class={["blog", "posts"].includes(Astro.url.pathname.split("/")[1])
+        ? "underline"
+        : ""}
+      href="/blog">blog</a
+    >
   </div>
 </div>
 
@@ -18,5 +23,9 @@
   .link-container {
     display: flex;
     justify-content: space-around;
+  }
+
+  .underline {
+    text-decoration: underline;
   }
 </style>
