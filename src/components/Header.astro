@@ -1,14 +1,12 @@
 ---
-
+const pathRoot = Astro.url.pathname.split("/")[1];
 ---
 
 <div class="header" icon-container>
-  <a href="/">Home</a>
+  <a class={!pathRoot ? "underline" : ""} href="/">Home</a>
   <div class="link-container">
     <a
-      class={["blog", "posts"].includes(Astro.url.pathname.split("/")[1])
-        ? "underline"
-        : ""}
+      class={["blog", "posts"].includes(pathRoot) ? "underline" : ""}
       href="/blog">blog</a
     >
   </div>
@@ -18,11 +16,24 @@
   .header {
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
   }
 
   .link-container {
     display: flex;
     justify-content: space-around;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   .underline {
