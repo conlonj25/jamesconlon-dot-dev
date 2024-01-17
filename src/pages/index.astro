@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
-// const allPosts = await Astro.glob("../pages/posts/*.md");
-// const topPosts = allPosts.slice(0,4);
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+const recentPosts = allPosts.slice(0,4);
 ---
 
 <BaseLayout title="Jim.dev">
@@ -48,10 +49,10 @@ import Card from "../components/Card.astro";
 
   <h2>Most Recent Blog Posts</h2>
   <ul role="list" class="link-card-grid">
-    <!-- {
-      topPosts.map((post) => (
-      <Card href={post.url ?? '/'}, title={post.frontmatter.title} body={post.frontmatter.description} />
+    {
+      recentPosts.map((post) => (
+      <Card href={`/posts/${post.slug}/`}, title={post.data.title} body={post.data.description} />
       ))
-    } -->
+    }
   </ul>
 </BaseLayout>
