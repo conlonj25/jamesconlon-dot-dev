@@ -6,14 +6,7 @@ const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout title="JamesConlon.dev">
-  <h1>/<span class="route-accent">blog</span></h1>
-  <ul role="list" class="link-card-grid">
-    {
-      allPosts.map((post) => (
-      <Card href={`/posts/${post.slug}/`}, title={post.data.title} body={post.data.description} />
-      ))
-    }
-  </ul>
+  <h1>/<span class="route-accent">about</span></h1>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet
     lorem vel ipsum cursus tincidunt nec dignissim leo. Cras sagittis ligula
