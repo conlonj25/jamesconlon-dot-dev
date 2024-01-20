@@ -1,7 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
+import wave from "/public/wave.svg?raw";
 ---
 
+<Fragment set:html={wave} />
 <div class="footer">
   <div class="icon-container">
     <a href="mailto:conlonj25@gmail.com">
@@ -21,17 +23,22 @@ import { Icon } from "astro-icon/components";
 
 <style>
   a {
-    color: white;
+    color: var(--primary-foreground);
     text-decoration: none;
   }
   .footer {
-    min-height: 3rem;
+    min-height: 5rem;
     display: flex;
     justify-content: end;
     align-items: end;
     padding: 1rem;
     color: white;
     font-size: 20px;
+    background-color: var(--primary);
+  }
+
+  svg {
+    width: 100%;
   }
 
   .icon-container {

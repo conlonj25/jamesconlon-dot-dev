@@ -13,11 +13,11 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Jim.dev" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon-js.png" />
+    <link rel="icon" type="image/png" href="/favicon-js.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{"Jim.dev"}</title>
   </head>
 
   <body>
@@ -31,33 +31,38 @@ const { title } = Astro.props;
 
 <style is:global>
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
+    --background: #424769;
+    --foreground: #f2f2f2;
+    --card: #2d3250;
+    --card-foreground: #f2f2f2;
+    --popover: #000e17;
+    --popover-foreground: #f2f2f2;
+    --primary: #f6b17a;
+    --primary-foreground: #fffbf8;
+    --secondary: #7077a1;
+    --secondary-foreground: #f2f2f2;
+    --muted: #2d3250;
+    --muted-foreground: #a3a3a3;
+    --accent: #2e4c26;
+    --accent-foreground: #f2f2f2;
+    --destructive: #9c4c26;
+    --destructive-foreground: #f5d8f8;
+    --border: #7077a1;
+    --input: #7077a1;
+    --ring: #f6b17a;
+    --accent-gradient: linear-gradient(45deg, var(--primary), white 90%);
   }
   html {
+    min-height: 100%;
     font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
+    background: var(--background);
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
-
   main {
     margin: auto;
     padding: 1rem;
@@ -67,49 +72,16 @@ const { title } = Astro.props;
     font-size: 20px;
     line-height: 1.6;
   }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
+
   h1 {
     font-size: 4rem;
     font-weight: 700;
     line-height: 1;
     text-align: center;
-    margin-bottom: 1em;
   }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
+
+  .route-accent {
+    color: var(--primary);
   }
   .link-card-grid {
     display: grid;

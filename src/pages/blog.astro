@@ -6,7 +6,7 @@ const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout title="JamesConlon.dev">
-  <h1>Jim<span class="text-gradient">.dev</span> - Blog</h1>
+  <h1>James Conlon <span class="route-accent">/blog</span></h1>
   <ul role="list" class="link-card-grid">
     {
       allPosts.map((post) => (
