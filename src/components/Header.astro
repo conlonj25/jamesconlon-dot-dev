@@ -6,10 +6,7 @@ const pathRoot = Astro.url.pathname.split("/")[1];
   <a href="/">jamesconlon.dev</a>
   <div class="link-container">
     <a class={pathRoot === "about" ? "underline" : ""} href="/about">about</a>
-    <a
-      class={["blog", "posts"].includes(pathRoot) ? "underline" : ""}
-      href="/blog">blog</a
-    >
+    <a class={pathRoot === "blog" ? "underline" : ""} href="/blog">blog</a>
   </div>
 </div>
 

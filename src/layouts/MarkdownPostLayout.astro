@@ -4,20 +4,15 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-  <main>
-    <h1><span class="route-accent">/</span>{frontmatter.title}</h1>
-    <slot />
-  </main>
+  <h1><span class="route-accent">/</span>{frontmatter.title}</h1>
+  <span class="date-container">{frontmatter.pubDate.toLocaleDateString()}</span>
+  <slot />
 </BaseLayout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
+  .date-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 2rem;
   }
 </style>
