@@ -50,7 +50,7 @@ const { title } = Astro.props;
     --border: #7077a1;
     --input: #7077a1;
     --ring: #f6b17a;
-    --accent-gradient: linear-gradient(45deg, var(--primary), white 90%);
+    --accent-gradient: linear-gradient(45deg, var(--primary), transparent 100%);
   }
   html {
     min-height: 100%;
@@ -68,7 +68,7 @@ const { title } = Astro.props;
     padding: 1rem;
     width: 800px;
     max-width: calc(100% - 2rem);
-    color: white;
+    color: var(--foreground);
     font-size: 20px;
     line-height: 1.6;
   }
