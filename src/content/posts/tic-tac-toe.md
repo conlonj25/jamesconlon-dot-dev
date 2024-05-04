@@ -1,6 +1,6 @@
 ---
-title: "Tic-tac-toe Hard Mode"
-pubDate: 2024-05-04
+title: "Tic-Tac-Toe Hard Mode"
+pubDate: 2024-04-05
 description: "Solving challenges on the classic React tic-tac-toe project"
 author: "James Conlon"
 image:
@@ -9,21 +9,21 @@ image:
 tags: ["webdev", "javascript", "beginners", "react"]
 ---
 
-Anyone who knows React is probably familiar with the famous tic-tac-toe example from the [training docs](https://react.dev/learn/tutorial-tic-tac-toe). It covers most of the basic priciples of React in one single project. It also includes a handful of challenges at the end to help you expand on what you've learned. I distinctly remember not being able to do any of them and quitting immediately. Well who's laughing now?
+Anyone who knows React is probably familiar with the famous tic-tac-toe example from the [training docs](https://react.dev/learn/tutorial-tic-tac-toe). It covers most of the basic priciples of React in one single project. It also includes a handful of challenges at the end to help you expand on what you've learned. I distinctly remember not being able to do any of them and quitting immediately. Well who's laughing now? (Me)
 
-Anyway, we do it because it's there. They included these exercises to provoke thought. And we're gonna do some serious thinking!
+Anyway, we do it because it's there. Keep reading and I guarantee you'll find something you disagree with.
 
 ## 1. Change button to text
 
 > For the current move only, show “You are at move #…” instead of a button.
 
-Nice easy one to start. The last button does nothing so we change it to a simple message.
+[Full Solution on Codesandbox](https://codesandbox.io/p/sandbox/1-change-message-6j7qcv)
+
+Nice easy one to start. The final button in the list does nothing so we replace it with a plain text message.
 
 ![Solution for problem 1](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/prafdg1qqkg48qd9mcjs.png)
 
-[Full Solution on Codesandbox](https://codesandbox.io/p/sandbox/1-change-message-6j7qcv)
-
-This is simple enough to do with a ternary inside the component. We already map each move to a list item `<li>`. Now inside each list item we check to see if it's the last element (remember -1 because zero index). Then we return either a string or a button.
+This is simple enough to do with a ternary inside the component. We already map each move to a list item `<li>`. Now inside each list item we check to see if it's the final element (remember -1 because zero index). Then we return either a string or a button.
 
 ```javascript
 <li key={move}>
@@ -39,9 +39,9 @@ This is simple enough to do with a ternary inside the component. We already map 
 
 > Rewrite Board to use two loops to make the squares instead of hardcoding them.
 
-This is purely a refactor. Only the code will change. The actual rendered app and functionality will remain exactly the same.
-
 [Full Solution on Codesandbox](https://codesandbox.io/p/sandbox/2-refactor-board-zkrpwj)
+
+This is purely a refactor. Only the code will change. The actual rendered app and functionality will remain exactly the same.
 
 First we'll try the nice solution. The one that I want to work. I want it to work so bad!
 
@@ -51,11 +51,11 @@ const boardLayout = [...Array(9).keys()].map((i) => (
 ));
 ```
 
-Look how neat that is! They key bit here is `[...Array(9).keys()]`. This is a time-honoured javascript hack that acts as our equivalent of a range function in any other language. i.e. Create an array of 9 elements, get the keys of those elements (0, 1, 2, ...) and then spread operator those keys out into an array. This lets me nicely map out the same element 9 times using a single line of code. But... there's a catch!
+Look how neat that is! They key bit here is `[...Array(9).keys()]`. This is a time-honoured javascript hack that acts as our equivalent of a range function in any other language Basically, create an array of 9 elements, get the keys of those elements (0, 1, 2, ...) and then spread those keys out into an array. This lets me nicely map out the same element nine times using a single line of code. But... there's a catch!
 
 ![Board rendered incorrectly](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jy86pu30rwgki2gkn8cl.png)
 
-Yep, that's not right! We have forgotten to add the row container. This means that instead of using my catchy one-liner from above we are going to have to perform an unholy combination of logic and layout. So we end up with the code below. It's a loop withing a loop. Three rows, three columns. It's definitely not as pretty, but pretty wasn't the challenge.
+Yep, that's not right! We have forgotten to add the row container. This means that instead of using my catchy one-liner from above we are going to have to perform an unholy combination of logic and layout. So we end up with the code below. It's a loop within a loop, as specified. Three rows, three columns. It's definitely not as pretty, but pretty wasn't the challenge.
 
 ```javascript
 const boardLayout = [...Array(3).keys()].map((row) => (
@@ -74,15 +74,15 @@ Replacing the original static layout with a new dynamic one has pros and cons. P
 
 > Add a toggle button that lets you sort the moves in either ascending or descending order.
 
+[Full Solution on Codesandbox](https://codesandbox.io/p/sandbox/3-toggle-button-g64wgf)
+
 This one is super easy!
 
 ![Solution for problem 3](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/48jgiccfo5fw5j7zb6mh.png)
 ![Solution for problem 3](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mgq5lehjadbc21ydto3g.png)
 
-[Full Solution on Codesandbox](https://codesandbox.io/p/sandbox/3-toggle-button-g64wgf)
-
-The layout for our moves currently looks like this: `<ol>{moves}</ol>`
-Here `moves` is nothing but an array of JSX elements, so why not swap them around like so `<ol>{moves.reverse()}</ol>`?
+The layout for our moves currently looks like this: `<ol>{moves}</ol>`.
+Here `moves` is nothing but an array of JSX elements. Why not swap them around like so `<ol>{moves.reverse()}</ol>`?
 
 This is perfectly fine to do because `moves` isn't state. It is derived from state, i.e. `moves = history.map()`. Crucially, the map function creates a copy of the array that we can mutate as much as we like. No state problems here officer!
 
@@ -109,15 +109,15 @@ return (
 );
 ```
 
-And bingo! Note that `isMovesReversed` is used to control the order of the moves elements and the text on the button. Using ternarys for simple logic like this is fine.
+And bingo! Note that `isMovesReversed` is used to control the order of the moves elements and the text on the button. Using ternarys for simple logic like this is perfectly fine.
 
-One side note that I hadn't thought about is that this is an ordered list. It doesn't care what order the array is in it just counts elements starting from 1. Luckily HTML came pre-bundled with a solution for that. `<ol>` in native HTML has a `reversed` attribute. We can just tie that to `isMovesReversed`. Beautiful native HTML!
+One side note that I hadn't thought about is that this is an ordered list. It doesn't care what order the array is in. It just counts elements starting from 1. Luckily HTML came pre-bundled with a solution for that. `<ol>` in native HTML has a `reversed` attribute. We can just tie that to `isMovesReversed`. Beautiful native HTML!
 
 ## 4. Winning streak
 
-> When someone wins, highlight the three squares that caused the win (and when no one wins, display a message about the result being a draw).
-
 [Full Solution on Codesandbox](https://codesandbox.io/p/sandbox/4-winning-streak-rjvvz8)
+
+> When someone wins, highlight the three squares that caused the win (and when no one wins, display a message about the result being a draw).
 
 ![Solution for problem 4](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kmpuxbaioo50l3n8rcql.png)
 
@@ -166,7 +166,7 @@ function Square({ value, onSquareClick }) {
 }
 ```
 
-You will see every square has now turned green. Darnit! Ok, let's make it conditional on some prop `isWinner`. We'll figure out what that is later.
+You will see every square has now turned green. That's what we wanted right? Damn! Ok, let's make it conditional on some prop `isWinner`. We'll figure out what that is later.
 
 ```javascript
 function Square({ value, onSquareClick, isWinner }) {
@@ -208,15 +208,15 @@ if (!winner && currentMove !== 9) {
 }
 ```
 
-It's notperfect but it will cover every case we will encounter here.
+It's not perfect but it will cover every case we will encounter here.
 
 ## 5. Move Locations
 
 > Display the location for each move in the format (row, col) in the move history list.
 
-Like the prompt said. Display the board coordinates of each move.
+[Full Solution on Codesandbox](https://codesandbox.io/p/sandbox/1-change-message-6j7qcv)
 
-[Full Solution on Codesandbox](<(https://codesandbox.io/p/sandbox/1-change-message-6j7qcv)>)
+Like the prompt said. Display the board coordinates of each move.
 
 ![Solution for problem 5](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5qj4okwjk41s5m7wxcda.png)
 
@@ -225,9 +225,9 @@ Currently state is used to track two things
 - `history`
 - `currentMove`
 
-We could add an extra piece of state. i.e. for each move we store a number that represents the location of that move. That's cool, but we would have to ensure we keep that new state in sync with the `history` at all times. Not so easy, especially in a larger app. We could also augment `history` into an object so it could store more detailed information. But I don't wanna do that.
+We could add an extra piece of state. i.e. for each move we store a number that represents the location of that move. That's cool, but we would have to ensure we keep that new state in sync with the `history` at all times. Not so easy, especially in a larger app. We could also augment `history` into an object so it could store more detailed information. That sounds like a better option but can we go even better? Can we use what we already have?
 
-Let's use what we already have. By comparing the board between any two given moves we can determine the location of the move. All this information is already in state, we just calculate what we want on the render. It's definitely putting some computation onto each render but I think here we will get away with it.
+By comparing the board between any two given moves we can determine the location of the move. All this information already exists in state, we just calculate what we want on the render. It's definitely putting some computation onto each render but I think here we will get away with it.
 
 ```javascript
 function getMoveIndex(oldSquare, newSquare) {
@@ -254,7 +254,7 @@ function indexToCoords(i) {
 }
 ```
 
-It's pretty trivial to go from an index value to a row/column value but it has to be done. That's the function of `indexToCoords`.
+It's trivial to go from an index value to a row/column value but it looks terrible. All that logic is neatly wrapped in `indexToCoords`.
 
 ```javascript
 const coords = indexToCoords(getMoveIndex(history[move - 1], history[move]));
@@ -264,4 +264,4 @@ Finally, for each move in history we just calculate `coords` (as in coordinates)
 
 ## Epilogue
 
-I made a lot of highly-correct highly-maverick decisions here. Hopefully I've managed to justify them. If not, fight me in the comments. What would you do differently?
+I think these were useful challenges. Refactoring and retooling code forces you to make a million small design decisions every day. These exercises do a nice job of exposing them at a small scale. Hopefully all the little decisions I've made here are defensible. If not, fight me in the comments. What would you do differently?
