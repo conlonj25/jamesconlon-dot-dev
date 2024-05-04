@@ -214,7 +214,7 @@ It's not perfect but it will cover every case we will encounter here.
 
 > Display the location for each move in the format (row, col) in the move history list.
 
-[Full Solution on Codesandbox](https://codesandbox.io/p/sandbox/1-change-message-6j7qcv)
+[Full Solution on Codesandbox](https://codesandbox.io/p/sandbox/5-move-locations-y75hk6)
 
 Like the prompt said. Display the board coordinates of each move.
 
