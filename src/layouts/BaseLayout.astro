@@ -1,5 +1,4 @@
 ---
-import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 interface Props {
@@ -17,34 +16,35 @@ interface Props {
     <meta name="generator" content={Astro.generator} />
     <title>{"jamesconlon.dev"}</title>
   </head><body>
+    <main>
     <Header />
     <main>
       <slot />
     </main>
-    <Footer />
   </body>
 </html>
 
+
 <style is:global>
   :root {
-    --background: #424769;
+    --background: #27272a;
     --foreground: #f2f2f2;
-    --card: #2d3250;
+    --card: #18181b;
     --card-foreground: #f2f2f2;
-    --popover: #000e17;
+    --popover: #09090b;
     --popover-foreground: #f2f2f2;
     --primary: #f6b17a;
     --primary-foreground: #fffbf8;
-    --secondary: #7077a1;
+    --secondary: #3f3f46;
     --secondary-foreground: #f2f2f2;
-    --muted: #2d3250;
+    --muted: #52525b;
     --muted-foreground: #a3a3a3;
     --accent: #2e4c26;
     --accent-foreground: #f2f2f2;
     --destructive: #9c4c26;
     --destructive-foreground: #f5d8f8;
-    --border: #7077a1;
-    --input: #7077a1;
+    --border: #3f3f46;
+    --input: #3f3f46;
     --ring: #f6b17a;
     --accent-gradient: linear-gradient(45deg, var(--primary), transparent 100%);
   }
@@ -60,7 +60,7 @@ interface Props {
     flex-direction: column;
   }
   main {
-    margin: auto;
+    margin: 2rem auto;
     padding: 1rem;
     width: 800px;
     max-width: calc(100% - 2rem);
@@ -73,7 +73,7 @@ interface Props {
     font-size: 3em;
     font-weight: 700;
     line-height: 1;
-    text-align: center;
+    margin: 0;
   }
   h2 {
     margin-top: 1.25em;
@@ -85,7 +85,6 @@ interface Props {
   }
   .link-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 2rem;
     padding: 0;
   }

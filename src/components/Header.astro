@@ -1,12 +1,30 @@
 ---
+import { Icon } from "astro-icon/components";
+import HomeLink from "./HomeLink.astro";
+
 const pathRoot = Astro.url.pathname.split("/")[1];
+const currentPath = Astro.url.pathname;
 ---
 
-<div class="header" icon-container>
-  <a href="/">jamesconlon.dev</a>
-  <div class="link-container">
-    <a class={pathRoot === "about" ? "underline" : ""} href="/about">about</a>
-    <a class={pathRoot === "blog" ? "underline" : ""} href="/blog">blog</a>
+<div class="header">
+   <HomeLink/>
+
+  <div class="icon-container">
+    <a href="mailto:conlonj25@gmail.com">
+      <Icon name="simple-icons:gmail" />
+    </a>
+    <a href="https://github.com/conlonj25">
+      <Icon name="simple-icons:github" />
+    </a>
+    <a href="https://twitter.com/conlonj25">
+      <Icon name="simple-icons:x" />
+    </a>
+    <a href="https://www.linkedin.com/in/conlonj5">
+      <Icon name="simple-icons:linkedin" />
+    </a>
+    <a href="https://www.codewars.com/users/conlonj25">
+      <Icon name="simple-icons:codewars" />
+    </a>
   </div>
 </div>
 
@@ -14,25 +32,26 @@ const pathRoot = Astro.url.pathname.split("/")[1];
   .header {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
     color: var(--foreground);
     font-size: 20px;
     line-height: 1.6;
   }
 
-  .link-container {
+  .icon-container {
     display: flex;
-    justify-content: space-around;
-    gap: 2rem;
+    gap: 1rem;
+    max-height: 1em;
   }
 
   a {
     color: var(--foreground);
     text-decoration: none;
+    transition: all .2s ease-in-out;
   }
 
   a:hover {
     color: var(--primary);
+    transform: scale(1.1);
   }
 
   .underline {

@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string;
+  date: Date
+  spoiler: string;
+  href: string;
+}
+
+const { title, date, spoiler, href } = Astro.props;
+---
+
+<a href={href}>
+  <article>
+    <h2>{title}</h2>
+    <p class="date">{new Date(date).toLocaleDateString("en", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })}</p>
+    <p>{spoiler}</p>
+  </article>
+</a>
+
+<style>
+  a {
+    color: var(--foreground);
+    text-decoration: none;
+  }
+  article {
+    margin-bottom: 2rem;
+    transition: all .2s ease-in-out;
+  }
+  article:hover {
+    transform: scale(1.01);
+  }
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--primary);
+  }
+  .date {
+    font-size: 0.9rem;
+  }
+  p {
+    margin: 0;
+  }
+</style>
