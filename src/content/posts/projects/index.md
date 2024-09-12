@@ -5,26 +5,16 @@ spoiler: "Look on my Works, ye Mighty!"
 pinned: true
 ---
 
-## Jamesconlon.dev
-[Live](https://github.com/conlonj25/jamesconlon-dot-dev)
-&nbsp;&nbsp;&nbsp;
-[Github](https://github.com/conlonj25/jamesconlon-dot-dev)
-
+## Jamesconlon.dev &nbsp; [[Live]](https://github.com/conlonj25/jamesconlon-dot-dev) &nbsp; [[Github]](https://github.com/conlonj25/jamesconlon-dot-dev)
 This isn't for you. This is for the scholars 100 years from now. Built with Astro, this ships as almost 100% html straight to your browser. If you notice any mistakes, feel free to go to the github and create a PR.
 
-## Miniref.pro
-[Live](https://www.miniref.pro/)
-&nbsp;&nbsp;&nbsp;
-[Github](https://github.com/conlonj25/miniref)  
+## Miniref.pro &nbsp; [[Live]](https://www.miniref.pro/) &nbsp; [[Github]](https://github.com/conlonj25/miniref)
 Fun link-sharing app that runs great on mobile. I did this all in Next JS, using Redis DB. This was my first time using Redis and I was impressed at how flexible it is. This app has way more scope for improvement. The next step is to add personalised subdomains and analytics. I expect Redis to cope pretty well with this too.
 
-## Bookshelf
-[Github](https://github.com/conlonj25/bookshelf)  
+## Bookshelf &nbsp; [[Github]](https://github.com/conlonj25/bookshelf)
+
 Oldie but a goodie. Wrote custom controllers for users, books and orders using Java servlets and JDBC.
 It's not live anymore because I'm not maintaining a whole Apache Tomcat server. But if you want to - feel free! It comes as a single deployable .war file.
 
-## Minecraft
-[Live](https://minecraft-clone-ashy.vercel.app/)
-&nbsp;&nbsp;&nbsp;
-[Github](https://github.com/conlonj25/minecraft-clone)  
+## Minecraft &nbsp; [[Live]](https://minecraft-clone-ashy.vercel.app/) &nbsp; [[Github]](https://github.com/conlonj25/minecraft-clone)  
 Some might call it... groundbreaking! Pure Javascript (OSG.js)
