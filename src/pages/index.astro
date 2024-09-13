@@ -1,64 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/Card.astro";
 import { getCollection } from "astro:content";
+import ArticleLink from "../components/ArticleLink.astro";
 const allPosts = await getCollection("posts");
 const recentPosts = allPosts.slice(0,4);
 ---
 
 <BaseLayout title="James Conlon">
-  <h1><span class="route-accent">/</span></h1>
-  <p>
-    Hi, I'm James. I'm a web developer from Ireland, living and working in <span class="route-accent">Barcelona</span>.
-  </p>
-  <p>
+  <p class="mb-16">
+    Hi, I'm James. I'm a web developer from Ireland, living and working in Barcelona.
     Take a look around. Here you'll find more information about me, the projects I'm working on and my blog.
   </p>
 
-  <h2>Projects</h2>
-
-  </div>
-
-  <ul role="list" class="link-card-grid">
-    <Card href="https://github.com/conlonj25/jamesconlon-dot-dev" , title="jamesconlon.dev" body="This very website. In code form!" />
-    <Card
-      href="https://github.com/conlonj25/business-model-canvas"
-      ,
-      title="Business Model Canvas"
-      body="Plan your next killer startup with this nifty app"
-    />
-    <Card
-      href="https://github.com/conlonj25/bookshelf"
-      ,
-      title="Bookshelf"
-      body="Mock-up web application. Online book retailer."
-    />
-    <Card
-      href="https://github.com/conlonj25/minecraft_Clone"
-      ,
-      title="Minecraft Clone"
-      body=`Some might call it "ground breaking"`
-    />
-    <Card
-      href="https://github.com/conlonj25/pynq-crowd-counting"
-      ,
-      title="PYNQ Crowd Counting"
-      body="Computer vision project for real-time crowd counting on edge hardware"
-    />
-    <Card
-      href="https://github.com/conlonj25/weather"
-      ,
-      title="Weather App"
-      body="Simple weather app built on top of OpenWeather API"
-    />
-  </ul>
-
-  <h2>Most Recent Blog Posts</h2>
-  <ul role="list" class="link-card-grid">
     {
-      recentPosts.map((post) => (
-      <Card href={`/blog/${post.slug}/`}, title={post.data.title} body={post.data.description} />
+      recentPosts.map((post: any) => (
+      <ArticleLink title={post.data.title} date={post.data.date} spoiler={post.data.spoiler} href={`/${post.slug}/`}/>
       ))
     }
-  </ul>
 </BaseLayout>

@@ -4,15 +4,13 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-  <h1><span class="route-accent">/</span>{frontmatter.title}</h1>
-  <span class="date-container">{frontmatter.pubDate.toLocaleDateString()}</span>
-  <slot />
+  <h2 class="text-3xl font-black text-primary mb-1">{frontmatter.title}</h2>
+  <p class="text-sm mb-10">{new Date(frontmatter.date).toLocaleDateString("en", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })}</p>
+  <div class="prose prose-markdown w-fit">
+    <slot />
+  </div>
 </BaseLayout>
-
-<style>
-  .date-container {
-    display: flex;
-    justify-content: end;
-    margin-bottom: 2rem;
-  }
-</style>

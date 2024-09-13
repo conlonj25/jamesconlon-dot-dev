@@ -1,12 +1,8 @@
 ---
 title: "Tic-Tac-Toe Hard Mode"
-pubDate: 2024-04-05
-description: "Solving challenges on the classic React tic-tac-toe project"
-author: "James Conlon"
-image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
-  alt: "The full Astro logo."
-tags: ["webdev", "javascript", "beginners", "react"]
+date: 2024-04-05
+spoiler: "Solving challenges on the classic React tic-tac-toe project"
+pinned: false
 ---
 
 Anyone who knows React is probably familiar with the famous tic-tac-toe example from the [training docs](https://react.dev/learn/tutorial-tic-tac-toe). It covers most of the basic priciples of React in one single project. It also includes a handful of challenges at the end to help you expand on what you've learned. I distinctly remember not being able to do any of them and quitting immediately. Well who's laughing now? (Me)
