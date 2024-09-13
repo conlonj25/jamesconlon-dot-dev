@@ -1,21 +1,6 @@
 ---
-const currentPath = Astro.url.pathname;
+
 ---
 
 {
-currentPath === '/' ?
-<span>jamesconlon<span class="route-accent">.dev</span></span> : 
-<a href={currentPath === '/' ? '' : '/'}>jamesconlon<span class="route-accent">.dev</span></a> 
-}
 
-<style>
-	a {
-	  color: var(--foreground);
-	  text-decoration: none;
-	  transition: all .2s ease-in-out;
-	}
-  
-	a:hover {
-		transform: scale(1.03);
-	}
-</style>

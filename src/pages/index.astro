@@ -1,22 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import Link from "../components/Link.astro";
+import ArticleLink from "../components/ArticleLink.astro";
 const allPosts = await getCollection("posts");
 const recentPosts = allPosts.slice(0,4);
 ---
 
 <BaseLayout title="James Conlon">
-  <p>
+  <p class="mb-16">
     Hi, I'm James. I'm a web developer from Ireland, living and working in Barcelona.
-  </p>
-  <p>
     Take a look around. Here you'll find more information about me, the projects I'm working on and my blog.
   </p>
 
     {
-      recentPosts.map((post) => (
-      <Link title={post.data.title} date={post.data.date} spoiler={post.data.spoiler} href={`/${post.slug}/`}/>
+      recentPosts.map((post: any) => (
+      <ArticleLink title={post.data.title} date={post.data.date} spoiler={post.data.spoiler} href={`/${post.slug}/`}/>
       ))
     }
 </BaseLayout>

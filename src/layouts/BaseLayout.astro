@@ -1,6 +1,5 @@
 ---
 import Header from "../components/Header.astro";
-import '@fontsource-variable/montserrat';
 
 interface Props {
   title: string;
@@ -16,94 +15,17 @@ interface Props {
     <link rel="icon" type="image/png" href="/favicon-js.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{"jamesconlon.dev"}</title>
-  </head><body>
-    <main>
-    <Header />
-    <main>
-      <slot />
+  </head>
+  <body
+    class="bg-background flex flex-col"
+  >
+    <main
+      class="mx-auto my-8 w-[800px] max-w-[calc(100%+2rem)] text-foreground text-lg"
+    >
+      <Header />
+      <main>
+        <slot />
+      </main>
     </main>
   </body>
 </html>
-
-
-<style is:global>
-  :root {
-    --background: #27272a;
-    --foreground: #f2f2f2;
-    --card: #18181b;
-    --card-foreground: #f2f2f2;
-    --popover: #09090b;
-    --popover-foreground: #f2f2f2;
-    --primary: #f6b17a;
-    --primary-foreground: #fffbf8;
-    --secondary: #3f3f46;
-    --secondary-foreground: #f2f2f2;
-    --muted: #52525b;
-    --muted-foreground: #a3a3a3;
-    --accent: #2e4c26;
-    --accent-foreground: #f2f2f2;
-    --destructive: #9c4c26;
-    --destructive-foreground: #f5d8f8;
-    --border: #3f3f46;
-    --input: #3f3f46;
-    --ring: #f6b17a;
-    --accent-gradient: linear-gradient(45deg, var(--primary), transparent 100%);
-  }
-  html {
-    font-family: Montserrat, system-ui, sans-serif;
-    background: var(--background);
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-  main {
-    margin: 2rem auto;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: var(--foreground);
-    font-size: 1.1rem;
-    line-height: 1.5;
-  }
-
-  h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    line-height: 1;
-    margin: 0;
-  }
-  h2 {
-    font-size: 2em;
-    font-weight: 900;
-    margin-top: 1.25em;
-  }
-
-  .route-accent {
-    color: var(--primary);
-  }
-
-  a {
-    color: var(--foreground);
-    text-decoration: none;
-  }
-  a:hover {
-    color: var(--primary);
-  }
-  img {
-    display: block;
-    margin: auto;
-    border-radius: 8px;
-    margin-bottom: 1em;
-  }
-
-  blockquote {
-    background: var(--card);
-    border-left: 10px solid var(--card-foreground);
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-  }
-
-  blockquote p {
-    display: inline;
-  }
-</style>
