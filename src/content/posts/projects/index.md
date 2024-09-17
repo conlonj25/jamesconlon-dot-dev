@@ -9,7 +9,7 @@ pinned: true
 
 This isn't for you. This is for the scholars 100 years from now. Built with Astro, this ships as almost 100% html straight to your browser. If you notice any mistakes, feel free to go to the github and create a PR.
 
-## Miniref.pro &nbsp; [Live](https://www.miniref.pro/) &nbsp; [Github](https://github.com/conlonj25/miniref)
+## Miniref.pro &nbsp; [Live](https://www.miniref.pro/)
 
 Fun link-sharing app that runs great on mobile. I did this all in Next JS, using Redis DB. This was my first time using Redis and I was impressed at how flexible it is. This app has way more scope for improvement. The next step is to add personalised subdomains and analytics. I expect Redis to cope pretty well with this too.
 
