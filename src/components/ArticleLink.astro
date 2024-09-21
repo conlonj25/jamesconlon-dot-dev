@@ -9,9 +9,11 @@ interface Props {
 const { title, date, spoiler, href } = Astro.props;
 ---
 
-<div class="transition ease-in-out text-foreground hover:scale-[1.01] duration-300">
+<div
+  class="transition ease-in-out text-foreground hover:scale-[1.01] duration-300"
+>
   <a href={href}>
-    <article class="mb-16">
+    <article>
       <h2 class="text-3xl font-black text-primary mb-1">{title}</h2>
       <p class="text-sm mb-2">
         {

@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 const currentPath = Astro.url.pathname;
 ---
 
-<div class="flex flex-row justify-between mb-16">
+<div class="flex flex-col gap-5 xl:flex-row xl:justify-between">
   {
     currentPath === "/" ? (
       <span class="text-4xl font-black">
