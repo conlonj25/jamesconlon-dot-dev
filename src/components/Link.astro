@@ -7,6 +7,9 @@ interface Props {
 const { href, text } = Astro.props;
 ---
 
-<a class="transition ease-in-out delay-150 text-foreground hover:-translate-y-1 hover:scale-110 hover:text-primary duration-300" href={href}>
+<a
+  class="transition ease-in-out delay-150 text-foreground hover:-translate-y-1 hover:scale-110 hover:text-primary duration-300"
+  href={href}
+>
   {text}
 </a>
