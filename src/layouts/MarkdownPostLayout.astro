@@ -16,7 +16,9 @@ const { frontmatter } = Astro.props;
       }
     </p>
   </div>
-  <div class="prose prose-markdown max-w-none">
+  <div
+    class="prose prose-markdown max-w-none prose-img:rounded-xl prose-img:mx-auto prose-code:before:hidden prose-code:after:hidden"
+  >
     <slot />
   </div>
 </BaseLayout>
