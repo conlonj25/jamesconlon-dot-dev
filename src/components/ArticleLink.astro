@@ -1,12 +1,15 @@
 ---
+import { Icon } from "astro-icon/components";
+
 interface Props {
   title: string;
   date: Date;
   spoiler: string;
   href: string;
+  pinned: boolean;
 }
 
-const { title, date, spoiler, href } = Astro.props;
+const { title, date, spoiler, href, pinned } = Astro.props;
 ---
 
 <div
@@ -14,7 +17,16 @@ const { title, date, spoiler, href } = Astro.props;
 >
   <a href={href}>
     <article>
-      <h2 class="text-3xl font-black text-primary mb-1">{title}</h2>
+      <span class="flex flex-row gap-3 items-center">
+        <h2 class="text-3xl font-black text-primary">{title}</h2>
+        {
+          pinned && (
+            <span>
+              <Icon class="text-xl text-primary" name="solar:pin-bold" />
+            </span>
+          )
+        }
+      </span>
       <p class="text-sm mb-2">
         {
           new Date(date).toLocaleDateString("en", {

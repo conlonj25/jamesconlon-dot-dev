@@ -3,7 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import ArticleLink from "../components/ArticleLink.astro";
 const allPosts = await getCollection("posts");
-const recentPosts = allPosts.slice(0, 4);
+const pinnedPosts = allPosts.filter((post) => post.data.pinned);
+const recentPosts = allPosts
+  .filter((post) => !post.data.pinned)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <BaseLayout title="James Conlon">
@@ -14,12 +17,13 @@ const recentPosts = allPosts.slice(0, 4);
   </p>
 
   {
-    recentPosts.map((post: any) => (
+    [...pinnedPosts, ...recentPosts].map((post) => (
       <ArticleLink
         title={post.data.title}
         date={post.data.date}
         spoiler={post.data.spoiler}
         href={`/${post.slug}/`}
+        pinned={post.data.pinned}
       />
     ))
   }
