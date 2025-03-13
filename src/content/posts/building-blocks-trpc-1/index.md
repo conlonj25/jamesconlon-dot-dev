@@ -1,5 +1,5 @@
 ---
-title: "TRPC Building Blocks - Part 1"
+title: "The Building Blocks of TRPC - Part 1"
 date: 2025-03-13
 spoiler: "TRPC! What is it? How did it get here?"
 pinned: false
