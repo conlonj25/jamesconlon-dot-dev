@@ -1,7 +1,7 @@
 ---
-title: "The Building Blocks of TRPC - Part 1"
+title: "Building Blocks of TRPC - Part 1"
 date: 2025-03-14
-spoiler: "TRPC! What is it? How did it get here?"
+spoiler: "A primer for using TRPC on your Typescript backend"
 pinned: false
 ---
 
@@ -153,7 +153,7 @@ We can create infinite types of procedures. What makes these procedure types dif
 export const publicProcedure = t.procedure.use(timingMiddleware);
 ```
 
-A publicProcedure is just a barebones procedure. Here timingMiddleware is used to time the duration of each request but this is really just for fun. Otherwise, this procedure is completely exposed to the outside world.
+`publicProcedure` is just a barebones procedure. Here timingMiddleware is used to time the duration of each request but this is really just for fun. Otherwise, this procedure is completely exposed to the outside world.
 
 ```ts: src/server/api/trpc.ts
 // src/server/api/trpc.ts
