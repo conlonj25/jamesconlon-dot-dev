@@ -9,7 +9,7 @@ This is a primer on using TRPC on your Typescript backend. It assumes familiarit
 
 It's also deliberately quite high-level. It's missing a lot of the good stuff they put in the frontend. To see more of what you're missing out on, reference the official docs [here](https://trpc.io/docs/concepts).
 
-Once you've got the pattern down you can move to part 2, where we'll learn to to customise TRPC for our needs.
+Once you've got the pattern down you can move to part 2, where we'll learn how to customise TRPC for our needs.
 
 ## Standard Configuration
 
