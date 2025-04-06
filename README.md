@@ -1,6 +1,6 @@
 # jamesconlon-dot-dev
 
-My personal website and blog.
+<p align="center"><img src="/public/favicon-js.svg" alt="jamesconlon.dev icon" width="250"/></p>
 
 ## Project Structure
 
