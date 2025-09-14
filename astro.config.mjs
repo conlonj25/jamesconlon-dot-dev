@@ -8,10 +8,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [icon(), tailwind()],
   output: "server",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-    runtime: 'nodejs22.x',
-  }),
+  adapter: vercel({ webAnalytics: { enabled: true } }),
 });
