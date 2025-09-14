@@ -12,5 +12,6 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
+    runtime: 'nodejs22.x',
   }),
 });
