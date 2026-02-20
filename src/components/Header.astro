@@ -11,7 +11,7 @@ const currentPath = Astro.url.pathname;
       </span>
     ) : (
       <a
-        class="text-4xl font-black transition ease-in-out text-foreground hover:scale-[1.025] duration-300"
+        class="text-4xl font-black text-foreground transition duration-300 ease-in-out hover:scale-[1.02] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring motion-reduce:transition-none motion-reduce:hover:scale-100"
         href={currentPath === "/" ? "" : "/"}
       >
         jamesconlon<span class="text-primary">.dev</span>
@@ -21,20 +21,29 @@ const currentPath = Astro.url.pathname;
 
   <div class="flex flex-row items-center gap-4 text-xl font-black">
     <a
-      class="transition ease-in-out text-foreground hover:scale-[1.2] duration-300 hover:text-primary"
+      class="text-foreground transition duration-300 ease-in-out hover:scale-[1.1] hover:text-primary focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring motion-reduce:transition-none motion-reduce:hover:scale-100"
       href="https://github.com/conlonj25"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="GitHub"
     >
       <Icon name="simple-icons:github" />
     </a>
     <a
-      class="transition ease-in-out text-foreground hover:scale-[1.2] duration-300 hover:text-primary"
+      class="text-foreground transition duration-300 ease-in-out hover:scale-[1.1] hover:text-primary focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring motion-reduce:transition-none motion-reduce:hover:scale-100"
       href="https://www.linkedin.com/in/conlonj5"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="LinkedIn"
     >
       <Icon name="simple-icons:linkedin" />
     </a>
     <a
-      class="transition ease-in-out text-foreground hover:scale-[1.2] duration-300 hover:text-primary"
+      class="text-foreground transition duration-300 ease-in-out hover:scale-[1.1] hover:text-primary focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring motion-reduce:transition-none motion-reduce:hover:scale-100"
       href="https://www.codewars.com/users/conlonj25"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Codewars"
     >
       <Icon name="simple-icons:codewars" />
     </a>

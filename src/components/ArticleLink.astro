@@ -13,9 +13,12 @@ const { title, date, spoiler, href, pinned } = Astro.props;
 ---
 
 <div
-  class="transition ease-in-out text-foreground hover:scale-[1.01] duration-300"
+  class="text-foreground transition duration-300 ease-in-out hover:scale-[1.01] motion-reduce:transition-none motion-reduce:hover:scale-100"
 >
-  <a href={href}>
+  <a
+    class="block focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    href={href}
+  >
     <article>
       <span class="flex flex-row gap-3 items-center">
         <h2 class="text-3xl font-black text-primary">{title}</h2>

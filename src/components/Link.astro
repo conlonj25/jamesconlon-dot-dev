@@ -8,7 +8,7 @@ const { href, text } = Astro.props;
 ---
 
 <a
-  class="transition ease-in-out delay-150 text-foreground hover:-translate-y-1 hover:scale-110 hover:text-primary duration-300"
+  class="text-foreground transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-primary focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100"
   href={href}
 >
   {text}
