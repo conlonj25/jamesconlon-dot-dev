@@ -10,12 +10,6 @@ const recentPosts = allPosts
 ---
 
 <BaseLayout title="James Conlon">
-  <p>
-    Hi, I'm James. I'm a web developer from Ireland, living and working in
-    Barcelona. Take a look around. Here you'll find more information about me,
-    the projects I'm working on and my blog.
-  </p>
-
   {
     [...pinnedPosts, ...recentPosts].map((post) => (
       <ArticleLink
